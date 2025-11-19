@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EcoShop - Tienda ecológica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <h1>EcoShop</h1>
+      <p class="subtitle">Tienda de productos ecológicos con carrito inteligente</p>
+      <nav id="nav-logged" class="nav hidden">
+        <span id="welcome-user"></span>
+        <button id="btn-logout" class="btn-secondary">Cerrar sesión</button>
+      </nav>
+    </header>
+
+    <!-- Auth container -->
+    <main id="auth-container">
+      <section class="card auth-card">
+        <h2>Iniciar sesión</h2>
+        <form id="login-form">
+          <label>Correo electrónico
+            <input type="email" id="login-email" required>
+          </label>
+          <label>Contraseña
+            <input type="password" id="login-password" required>
+          </label>
+          <button type="submit" class="btn-primary full-width">Entrar</button>
+        </form>
+
+        <p class="helper-text">
+          ¿Aún no tienes cuenta?
+          <button id="show-register" class="link-button">Regístrate aquí</button>
+        </p>
+      </section>
+
+      <section class="card auth-card hidden" id="register-section">
+        <h2>Registro</h2>
+        <form id="register-form">
+          <label>Nombre
+            <input type="text" id="reg-name" required>
+          </label>
+          <label>Correo electrónico
+            <input type="email" id="reg-email" required>
+          </label>
+          <label>Contraseña
+            <input type="password" id="reg-password" minlength="4" required>
+          </label>
+          <fieldset class="tags-field">
+            <legend>Intereses ecológicos (para recomendaciones)</legend>
+            <label><input type="checkbox" value="hogar"> Hogar sostenible</label>
+            <label><input type="checkbox" value="cocina"> Cocina eco</label>
+            <label><input type="checkbox" value="baño"> Baño & cuidado personal</label>
+            <label><input type="checkbox" value="movilidad"> Movilidad</label>
+          </fieldset>
+          <button type="submit" class="btn-primary full-width">Crear cuenta</button>
+        </form>
+
+        <p class="helper-text">
+          ¿Ya tienes cuenta?
+          <button id="show-login" class="link-button">Volver a iniciar sesión</button>
+        </p>
+      </section>
+      <p class="app-notice">Datos guardados solo en tu navegador (localStorage). Es una simulación para prácticas.</p>
+    </main>
+
+    <!-- Main app -->
+    <main id="app-container" class="hidden">
+      <section class="layout">
+        <section class="card products">
+          <h2>Productos ecológicos</h2>
+          <div id="products-list" class="products-grid"></div>
+        </section>
+
+        <section class="sidebar">
+          <section class="card">
+            <h2>Recomendado para ti</h2>
+            <div id="recommendations" class="recommendations"></div>
+          </section>
+
+          <section class="card">
+            <h2>Carrito inteligente</h2>
+            <div id="cart-items" class="cart-items"></div>
+            <div class="cart-summary">
+              <p>Total: <span id="cart-total">S/ 0.00</span></p>
+              <p id="cart-hint" class="hint"></p>
+              <button id="btn-checkout" class="btn-primary full-width" disabled>Pagar ahora</button>
+            </div>
+          </section>
+        </section>
+      </section>
+
+      <section id="checkout-modal" class="modal hidden">
+        <div class="modal-content card">
+          <h2>Pago simulado</h2>
+          <p>Esta demo no usa un procesador de pagos real. Simula el cobro y genera un código de transacción.</p>
+          <p><strong>Monto a cobrar: <span id="checkout-amount">S/ 0.00</span></strong></p>
+          <label>Nombre en la tarjeta
+            <input type="text" id="card-name" placeholder="Nombre del titular">
+          </label>
+          <label>Número de tarjeta (simulado)
+            <input type="text" id="card-number" maxlength="19" placeholder="XXXX XXXX XXXX XXXX">
+          </label>
+          <button id="btn-confirm-payment" class="btn-primary full-width">Confirmar pago</button>
+          <button id="btn-cancel-payment" class="btn-secondary full-width">Cancelar</button>
+          <p id="payment-result" class="payment-result"></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Demo EcoShop &mdash; HTML, CSS y JS puros (sin backend).</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

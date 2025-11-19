@@ -1,0 +1,286 @@
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f0f4f3;
+  color: #12302a;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #0a9f7b, #067b5e);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.1rem 0 0.6rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+main {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-footer {
+  padding: 0.75rem 1.5rem;
+  background: #0f2721;
+  color: #cde6dd;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 0.7rem;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.auth-card {
+  max-width: 420px;
+  margin: 1rem auto;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #c4d6d0;
+  font-size: 0.9rem;
+}
+
+input:focus {
+  outline: none;
+  border-color: #0a9f7b;
+  box-shadow: 0 0 0 2px rgba(10,159,123,0.2);
+}
+
+.btn-primary,
+.btn-secondary,
+.link-button {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: #0a9f7b;
+  color: #fff;
+  padding: 0.55rem 0.8rem;
+  font-weight: 600;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: #0a9f7b;
+  border: 1px solid #0a9f7b;
+  padding: 0.45rem 0.7rem;
+}
+
+.link-button {
+  background: none;
+  color: #0a9f7b;
+  padding: 0;
+  border: none;
+  text-decoration: underline;
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 0.6rem;
+}
+
+.helper-text {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+}
+
+.app-notice {
+  margin: 0.5rem auto;
+  max-width: 640px;
+  font-size: 0.8rem;
+  color: #51635e;
+  text-align: center;
+}
+
+.tags-field {
+  border: 1px solid #c4d6d0;
+  border-radius: 0.55rem;
+  padding: 0.6rem;
+  margin-top: 0.6rem;
+}
+.tags-field legend {
+  font-size: 0.8rem;
+  padding: 0 0.2rem;
+}
+.tags-field label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-right: 0.8rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.2fr);
+  gap: 1rem;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.product-card {
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  background: #f5faf8;
+  border: 1px solid #d3e7dd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card h3 {
+  margin: 0.2rem 0;
+  font-size: 1rem;
+}
+
+.product-meta {
+  font-size: 0.8rem;
+  color: #4b635d;
+}
+
+.price {
+  font-weight: 700;
+  margin-top: 0.2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  background: #e2f4eb;
+  color: #0a7a5e;
+  margin-top: 0.2rem;
+}
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.recommendation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recommendation-item span {
+  flex: 1;
+}
+
+.cart-items {
+  min-height: 60px;
+  font-size: 0.85rem;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  border-bottom: 1px dashed #d4e2dd;
+}
+
+.cart-summary {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #0f6b52;
+  margin-top: 0.3rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+}
+
+.payment-result {
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
